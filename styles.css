@@ -1,0 +1,111 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comfortaa", sans-serif;
+}
+
+:root {
+  --lime-green: #5cd85a;
+  --teal-green: #107869;
+  --dark-green: #08313a;
+  --darker-green: #02232b;
+  --darkest-green: #010708;
+}
+
+body {
+  background-color: var(--dark-green);
+  text-align: center;
+  color: var(--lime-green);
+}
+
+h1 {
+  margin: 30px 0 21px;
+  font-family: "Carter One", system-ui;
+  font-size: 3rem;
+}
+
+h2 {
+  margin: 30px 0 11px;
+  font-family: "Carter One", system-ui;
+  font-size: 2.3rem;
+}
+
+.btn {
+  cursor: pointer;
+  width: 150px;
+  margin: 10px;
+  padding: 9px;
+  color: var(--darkest-green);
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: linear-gradient(#107869, #5cd85a);
+  border-width: 4px;
+  border-radius: 15px;
+  border-color: var(--teal-green);
+}
+
+.btn:hover {
+  transform: scale(110%) rotate(-2deg);
+}
+
+.rules-container {
+  padding: 10px 0;
+  margin: auto;
+  background-color: var(--darker-green);
+  border-radius: 15px;
+  border: 3px solid var(--teal-green);
+  font-size: 1rem;
+}
+
+.rules-container ul {
+  list-style-type: none;
+}
+
+.rules-container p {
+  margin: 17px 0;
+}
+
+.rules-container li {
+  margin: 9px 0;
+  font-style: italic;
+}
+
+@media (min-width: 760px) {
+  .rules-container {
+    width: 60%;
+  }
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  font-size: 1.3rem;
+}
+
+.score {
+  font-weight: 500;
+}
+
+.results-container {
+  margin: 15px 0;
+}
+
+p#results-msg,
+p#winner-msg {
+  margin-top: 15px;
+  font-size: 1.3rem;
+}
+
+#winner-msg {
+  margin-top: 25px;
+  font-size: 2.3rem;
+}
+
+#reset-game-btn {
+  display: none;
+  margin: 20px auto;
+}
