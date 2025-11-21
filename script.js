@@ -1,6 +1,6 @@
 function getRandomComputerResult() {
-  const options = ["Rock", "Paper", "Scissors"];
-  const randomIndex = Math.floor(Math.random() * 3);
+  const options = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
+  const randomIndex = Math.floor(Math.random() * 5);
   return options[randomIndex];
 }
 
@@ -11,11 +11,34 @@ function hasPlayerWonTheRound(userOption, computerResult) {
   if (userOption === computerResult) {
     return null;
   }
-  if (
-    (userOption === "Rock" && computerResult === "Scissors") ||
-    (userOption === "Scissors" && computerResult === "Paper") ||
-    (userOption === "Paper" && computerResult === "Rock")
-  ) {
+
+  /*
+  Scissors cuts paper,
+  Paper covers rock,
+  Rock crushes scissors, 
+  Scissors decapitates lizard,
+  Lizard poisons Spock,
+  Spock smashes schissors,
+  Spock vaporizes rock,
+  Rock crushes lizard,
+  Lizard eats paper,
+  Paper disproves Spock.
+  */
+
+  const winningCombinations = [
+    ["Scissors", "Paper"],
+    ["Paper", "Rock"],
+    ["Rock", "Scissors"],
+    ["Scissors", "Lizard"],
+    ["Lizard", "Spock"],
+    ["Spock", "Scissors"],
+    ["Spock", "Rock"],
+    ["Rock", "Lizard"],
+    ["Lizard", "Paper"],
+    ["Paper", "Spock"],
+  ];
+
+  if (winningCombinations.some((combo) => combo[0] === userOption && combo[1] === computerResult)) {
     return true;
   }
   return false;
@@ -48,9 +71,8 @@ function showResults(userOption) {
   computerScoreSpanElement.innerText = computerScore;
 
   if (playerScore === 3 || computerScore === 3) {
-    winnerMsgElement.innerText = `${
-      playerScore === 3 ? "Player" : "Computer"
-    } has won the game.`;
+    winnerMsgElement.innerText = `${playerScore === 3 ? "Player" : "Computer"
+      } has won the game.`;
     resetGameBtn.style.display = "block";
     optionsContainer.style.display = "none";
     roundResultsMsg.style.display = "none";
@@ -71,6 +93,8 @@ function resetGame() {
 const rockBtn = document.getElementById("rock-btn");
 const paperBtn = document.getElementById("paper-btn");
 const scissorsBtn = document.getElementById("scissors-btn");
+const lizardBtn = document.getElementById("lizard-btn");
+const spockBtn = document.getElementById("spock-btn");
 
 rockBtn.addEventListener("click", function () {
   showResults("Rock");
@@ -82,6 +106,14 @@ paperBtn.addEventListener("click", function () {
 
 scissorsBtn.addEventListener("click", function () {
   showResults("Scissors");
+});
+
+lizardBtn.addEventListener("click", function () {
+  showResults("Lizard");
+});
+
+spockBtn.addEventListener("click", function () {
+  showResults("Spock");
 });
 
 resetGameBtn.addEventListener("click", resetGame);
