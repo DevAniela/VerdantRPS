@@ -2,6 +2,17 @@
 
 An expanded version of the classic game, **Rock, Paper, Scissors, Lizard, Spock (RPSLS)**, built with HTML, CSS, and Vanilla JavaScript. Test your luck and strategy against the computer! BAZINGA!
 
+<table border="0" cellspacing="0" cellpadding="0" style="border: none !important; border-spacing: 0; margin: 0 auto; width: 100%;">
+    <tr>
+        <td align="center">
+            <img src="screenshots/game-interface-play-again.png" alt="verdantRPSLS game interface player wins" style="width:90%; max-width:650px; display:block; margin:0;">
+        </td>
+        <td align="center">
+            <img src="screenshots/game-interface-w-rules.png" alt="verdantRPSLS game rules" style="width:90%; max-width:500px; display:block; margin:0;">
+        </td>
+    </tr>
+</table>
+
 ## 🎯 The Rules of the Game
 
 This game uses the popular five-option variation (RPSLS), where each option defeats two others and is defeated by two others. The first player to reach **3 points** wins the match.
