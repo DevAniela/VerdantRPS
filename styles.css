@@ -35,7 +35,7 @@ h2 {
 
 .btn {
   cursor: pointer;
-  width: 150px;
+  width: 140px;
   margin: 10px;
   padding: 9px;
   color: var(--darkest-green);
@@ -49,6 +49,14 @@ h2 {
 
 .btn:hover {
   transform: scale(110%) rotate(-2deg);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: auto;
 }
 
 .rules-container {
@@ -76,6 +84,10 @@ h2 {
 @media (min-width: 760px) {
   .rules-container {
     width: 60%;
+  }
+
+  .btn-container {
+    width: 100%;
   }
 }
 
